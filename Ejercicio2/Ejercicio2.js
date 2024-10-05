@@ -3,15 +3,25 @@
 // por el usuario coincide con la guardada en la variable sin tener en cuenta mayúsculas y 
 // minúsculas, se debe validar que solo se pueda ingresar valores alfanuméricos. 
 
-const clave = "PASSWORD";
+const claveGuardada = "Password456";
 
-const contraseña = prompt("Ingrese la contraseña: ");
+function validarContraseña(){
 
-if (clave === "PASSWORD") {
-    console.log("La contraseña es correcta");
-}else{
-    console.log("La contraseña es incorrecta");
+const contraseñaIntroducida = prompt("Ingrese la contraseña: ");
+
+if (!/^[a-zA-Z0-9]+$/.test(contraseñaIntroducida)) {
+    alert("La contraseña debe ser alfanumérica!");
+    return
 }
 
- 
+const claveMinuscula = contraseñaIntroducida.toLowerCase();
+const contraseñaCorrectaMinuscula = claveGuardada.toLowerCase();
+
+if(claveMinuscula === contraseñaCorrectaMinuscula){
+   alert("La contraseña es correcta!");
+}else{
+    alert("La contraseña es incorrecta!");
+}
+}
+ validarContraseña();
 
