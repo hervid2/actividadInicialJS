@@ -8,18 +8,18 @@ function dividir(){
         const divisor = parseFloat (prompt("Ingrese el divisor: "));
 
         if(isNaN(dividendo) || isNaN(divisor)){
-            throw new Error("Caracter no es un número!");
+            throw new Error(" Uno de los caracteres ingresados no es un número!");
         } 
 
         if(divisor === 0){
-            throw new Error("Cero no es un divisor válido!");
+            throw new Error(" Cero no es un divisor válido!");
         } 
 
         const cociente = dividendo / divisor;
-        console.log("El resultado de la división es: ", cociente);
+        alert("El resultado de la división es: "+ cociente);
         
     } catch (error){
-        console.error("Error:", error.message);
+        alert(" Error:"+ error.message);
     }
 }
 dividir();

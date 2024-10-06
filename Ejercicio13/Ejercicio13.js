@@ -1,13 +1,29 @@
 // Escribir un programa que lea 4 números y calcule la media.
 
-function calcularMedia(numero1, numero2, numero3, numero4) {
-    return (numero1 + numero2 + numero3 + numero4)/4;
+function calcularMedia(...numeros) {
+    let arreglo = numeros[0];
+console.log(arreglo); 
+
+  let suma = 0;
+  for (let num of arreglo) {
+    console.log(num);
+    
+    suma += num;
+  }
+  let promedio = suma / arreglo.length;
+  return promedio;
 }
 
-const numero1 = parseFloat(prompt("Por favor ingrese el primer número: "));
-const numero2 = parseFloat(prompt("Por favor ingrese el segundo número: "));
-const numero3 = parseFloat(prompt("Por favor ingrese el tercer número: "));
-const numero4 = parseFloat(prompt("Por favor ingrese el cuarto número: "));
-const moda = calcularMedia(numero1, numero2, numero3, numero4);
+let numeros = [];
 
-alert(`La media de ${numero1}, ${numero2}, ${numero3} y ${numero4} es: ${moda}`);
+while (true) {
+  let num = parseFloat(prompt(`Ingrese el número ó 0 para salir`));
+  if (num != 0) {
+    numeros.push(num);
+  } else {
+    break;
+  }
+}
+
+let resultado = calcularMedia(numeros);
+alert(resultado);

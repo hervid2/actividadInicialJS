@@ -11,11 +11,11 @@ function determinarGrupo() {
     let primeraLetra = nombreAlumno.charAt(0).toUpperCase();
 
     if ((sexoAlumno !== 'M' && sexoAlumno !== 'F') || nombreAlumno.length === 0) {
-        console.log("Datos incorrectos. Asegúrese de ingresar un nombre y sexo válidos.");
+        alert("Datos incorrectos. Asegúrese de ingresar un nombre y sexo válidos.");
         return;
     }
 
-    let grupo = '';
+    let grupo;
 
     if (sexoAlumno === 'F') {
         if (primeraLetra < 'M') {
@@ -31,6 +31,6 @@ function determinarGrupo() {
         }
     }
 
-    console.log(`El alumn@ ${nombreAlumno} pertenece al grupo: ${grupo}`);
+    alert(`El alumn@ ${nombreAlumno} pertenece al grupo: ${grupo}`);
 }
 determinarGrupo();

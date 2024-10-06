@@ -2,20 +2,20 @@
 // menor de edad, el programa debe validar que solo se puedan ingresar números positivos. 
 
 function DeterminarMayoriaEdad(){
-    let edad = prompt("Por favor ingrese su edad: ");
+    let edad = parseInt(prompt("Por favor ingrese su edad: "));
 
     if (isNaN(edad)) {
-        console.log("Ingrese su edad solo en caracteres numéricos!");
+        alert("Ingrese su edad solo en caracteres numéricos!");
         return;
     }
 
     if (edad <= 18 && edad > 0) {
-        console.log("La persona es menor de edad!");
+        alert("La persona es menor de edad!");
     } else if (edad <= 0) {
-        console.log("La edad ingresada no es válida");
+        alert("La edad ingresada no es válida");
         return;
     } else {
-        console.log("La persona es mayor de edad!");
+        alert("La persona es mayor de edad!");
     }
 }
 DeterminarMayoriaEdad();

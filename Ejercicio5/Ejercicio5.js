@@ -4,17 +4,20 @@
 // no.
 
 function determinarTributo() {
-    console.log("Dian Impuestos y aduanas nacionales:");
-    console.log("------------------------------------");
-    console.log(" ");
-    const edad = prompt("Ingrese su edad: ");
-    const ingresos = prompt("Ingrese su ingreso mensual: ");
+   
+    const edad = parseInt(prompt("Ingrese su edad: "));
+    const ingresos = parseFloat(prompt("Ingrese su ingreso mensual: "));
+
+    if(edad< 0 || ingresos < 0){
+        alert("Error: edad e ingresos no pueden ser negativos");
+        return;
+    }
 
     if (edad > 16 && ingresos >= 1000) {
-        console.log("El ciudadano tiene " + edad + ", y devenga $" + ingresos + ", por lo tanto debe tributar!");
+        alert("El ciudadano tiene " + edad + ", y devenga $" + ingresos + ", por lo tanto debe tributar!");
 
     } else {
-        console.log("El ciudadano tiene " + edad + ", y devenga $" + ingresos + ", por lo tanto NO debe tributar!");
+        alert("El ciudadano tiene " + edad + ", y devenga $" + ingresos + ", por lo tanto NO debe tributar!");
     }
 }
 determinarTributo();

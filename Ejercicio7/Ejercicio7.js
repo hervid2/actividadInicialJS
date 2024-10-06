@@ -9,29 +9,26 @@
 
 function porcentajeImpuesto() {
     
-    let rentaAnual = prompt("Introduzca su renta anual:");
+    let rentaAnual = parseFloat(prompt("Introduzca su renta anual:"));
 
     if (isNaN(rentaAnual) || rentaAnual < 0) {
         console.log("Por favor, introduzca un valor de renta válido!");
         return;
     }
 
-    let porcentajeImpositivo = 0;
 
-    if (rentaAnual >= 10000 && rentaAnual <= 20000) {
-        porcentajeImpositivo = 5;
-    } else if (rentaAnual > 20000 && rentaAnual <= 35000) {
-        porcentajeImpositivo = 10;
-    } else if (rentaAnual > 35000 && rentaAnual <= 60000) {
-        porcentajeImpositivo = 20;
+    if (rentaAnual >= 10000 && rentaAnual < 20000) {
+        alert(`El porcentaje de impuesto a pagar según su renta anual es del 5% (${rentaAnual.toFixed(2) * 0.05})`);
+    } else if (rentaAnual >= 20000 && rentaAnual < 35000) {
+        alert(`El porcentaje de impuesto a pagar según su renta anual es del 10% (${rentaAnual.toFixed(2) * 0.1})`);
+    } else if (rentaAnual >= 35000 && rentaAnual <= 60000) {
+        alert(`El porcentaje de impuesto a pagar según su renta anual es del 20% (${rentaAnual.toFixed(2) * 0.2})`);
     } else if (rentaAnual > 60000) {
-        porcentajeImpositivo = 45;
+        alert(`El porcentaje de impuesto a pagar según su renta anual es del 45% (${rentaAnual.toFixed(2) * 0.45})`);
     } else {
         console.log("No debe pagar impuesto!");  
         return; 
     }
-
-    console.log(`El porcentaje de impuesto a pagar según su renta anual es de ${porcentajeImpositivo}%.`);
 }
 
 porcentajeImpuesto();

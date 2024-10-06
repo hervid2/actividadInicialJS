@@ -5,15 +5,15 @@ function parImpar() {
     const numeroIngresado = parseInt(prompt("Ingrese un número de tipo entero:"));
 
     if (isNaN(numeroIngresado)) {
-        console.log("Por favor, ingrese un número de tipo entero válido!");
+        alert("Por favor, ingrese un número de tipo entero válido!");
         return;
     }
 
     if (numeroIngresado % 2 === 0) {
-        console.log(numeroIngresado + " es un número par!");
+        alert(numeroIngresado + " es un número par!");
     }
     else {
-        console.log(numeroIngresado + " es un número impar!");
+        alert(numeroIngresado + " es un número impar!");
     }
 }
 parImpar();

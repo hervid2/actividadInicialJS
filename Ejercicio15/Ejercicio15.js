@@ -6,10 +6,11 @@ function longitudCircunferencia(radio) {
   
   function areaCircunferencia(radio) {
     return Math.PI * Math.pow(radio, 2);
+    // return Math.PI * radio **2;
   }
   
   const radio = parseFloat(prompt("Por favor ingrese el radio de la circunferencia:"));
   const longitud = longitudCircunferencia(radio);
   const area = areaCircunferencia(radio);
-  console.log(`La longitud de la circunferencia es: ${longitud}`);
-  console.log(`El área de la circunferencia es: ${area}`);
+  alert(`La longitud de la circunferencia es: ${longitud}`);
+  alert(`El área de la circunferencia es: ${area}`);

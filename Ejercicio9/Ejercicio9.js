@@ -18,7 +18,5 @@ function precioTicket(){
         return
     }
 
-
-
 }
  precioTicket();

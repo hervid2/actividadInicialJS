@@ -14,7 +14,7 @@ function pedirPizza() {
     const ingredientesVegetarianos = ["pimiento", "tofu"];
     const ingredientesNoVegetarianos = ["pepperoni", "jamon", "salmon"];
 
-    const pizzaVegetariana = prompt("Bienvenido a nuestra pizzería! ¿Desea una pizza vegetariana? escriba: 'si' o 'no': ").toLowerCase();
+    const pizzaVegetariana = prompt("Bienvenido a nuestra pizzería!\n ¿Desea una pizza vegetariana?\n escriba: 'si' o 'no': ").toLowerCase();
 
     let ingredienteElegido;
     let tipoPizza;
