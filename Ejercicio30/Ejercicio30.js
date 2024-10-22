@@ -1,27 +1,37 @@
 // Comprobar la fortaleza de una contraseña teniendo en cuenta que debe tener 
 //entre 8 y 12 caracteres, y al menos una mayúscula, una minúscula, y un dígito. 
 
-do{
-    let contraseña = prompt("Ingrese una contraseña entre 8 y 12 caracteres,\n con al menos una mayúscula, una minúscula y un dígito:");
-    let mayuscula = true;
-    let minuscula = true;
-    let digito = true;
+function validarContraseña(contraseña) {
+    let mayuscula = false;
+    let minuscula = false;
+    let digito = false;
 
     if (contraseña.length >= 8 && contraseña.length <= 12) {
         for (let i = 0; i < contraseña.length; i++) {
-            if (contraseña[i] >= 'A' && contraseña[i] <= 'Z') {
+            const char = contraseña[i];
+            if (char >= 'A' && char <= 'Z') {
                 mayuscula = true;
-            } 
-            if(contraseña[i] >= 'a' && contraseña[i] <= 'z'){
+            }
+            if (char >= 'a' && char <= 'z') {
                 minuscula = true;
-            } 
-            } if(!isNaN(parseInt(contraseña[i]))){
+            }
+            if (char >= '0' && char <= '9') {
                 digito = true;
             }
-        }else{
-    alert("La contraseña debe tener entre 8 y 12 caracteres,\n contener al menos una mayúscula, una minúscula \n y un número!");
+        }
+        return mayuscula && minuscula && digito;
+    }
+    return false;
 }
 
-}while(!((mayuscula = true) && (minuscula = true) && (digito = true)));
+let contraseña;
+while (true) {
+    contraseña = prompt("Ingrese una contraseña entre 8 y 12 caracteres,\n con al menos una mayúscula, una minúscula y un dígito:");
 
-alert(`La contraseña ha sido establecida exitosamente!`);
+    if (validarContraseña(contraseña)) {
+        alert("La contraseña ha sido establecida exitosamente!");
+        break;
+    } else {
+        alert("La contraseña debe tener entre 8 y 12 caracteres,\n y contener al menos una mayúscula, una minúscula y un número.");
+    }
+}
